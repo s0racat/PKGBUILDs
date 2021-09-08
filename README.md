@@ -1,6 +1,6 @@
 # PKGBUILDs
 
-[![CI](https://github.com/skikat/PKGBUILDs/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/skikat/PKGBUILDs/actions/workflows/build-and-release.yml)
+[![CI](https://github.com/soracqt/PKGBUILDs/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/soracqt/PKGBUILDs/actions/workflows/build-and-release.yml)
 
 ```bash
 pacman -S --needed base-devel
@@ -12,6 +12,6 @@ makepkg -src --skippgpcheck
 
 ```bash
 [custom]
-Server = https://github.com/skikat/PKGBUILDs/releases/latest/download
+Server = https://github.com/soracqt/PKGBUILDs/releases/latest/download
 SigLevel = Never
 ```
