@@ -2,7 +2,7 @@
 
 pkgbase=linux-lts-hardened
 _pkgbase=linux-lts
-pkgver=5.10.64
+pkgver=5.10.65
 pkgrel=1
 pkgdesc='LTS Linux'
 url="https://www.kernel.org/"
@@ -25,10 +25,10 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256sums=('3eb84bd24a2de2b4749314e34597c02401c5d6831b055ed5224adb405c35e30a'
+sha256sums=('edd3dedbce5bcaa5ba7cde62f8f3fd58b2ab21e2ec427b9d200685da5ec03e66'
             'SKIP'
-            '727dfdbbfd054d3651f8c92c7764a613802ef192689c194555c8b55eaea1f06f'
-            'b1a60f72ae3bfd71ae848fc0cbaaff326ebc88d0b200c7906c953cf5a2418e91')
+            'c973fce618b8e42f98ff201200c1c2d7d657fdc5fda90d6cc38d58276d55897d'
+            '5862830ed0bd4d771b28eeff3738172ef4740108a0b8e064a80fb577fccd94af')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
