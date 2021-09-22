@@ -63,11 +63,6 @@ jobs:
           cd man-pages-ja
           makepkg -s --noconfirm
 
-      - name: Build linux-lts-hardened
-        run: |
-          cd linux-lts-hardened
-          MAKEFLAGS=$(nproc) makepkg -s --noconfirm --skippgpcheck
-
       - name: Create repo
         run: |
           mkdir repo
