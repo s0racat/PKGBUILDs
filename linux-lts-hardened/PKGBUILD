@@ -2,7 +2,7 @@
 
 pkgbase=linux-lts-hardened
 _pkgbase=linux-lts
-pkgver=5.10.67
+pkgver=4.19.206
 pkgrel=1
 pkgdesc='LTS Linux'
 url="https://www.kernel.org/"
@@ -26,9 +26,9 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256sums=('8c5740aa782593b8fabf9b71c2800182d4fe965adabd3595634113d48cb98a82'
+sha256sums=('b7eb776f408b3ea71c97dde4888cc4549edf925a18cd158e7c9681d6ffa684c0'
             'SKIP'
-            '37d0f1bd2cd753aba00735ea7a104445ce6df59c12684b1c4c6a67e7d8c46efb'
+            'd30474ce173931f20b095e38b3d506121fa207949701105f12542db5e586d48b'
             '4df925746714c6d02d13d9e5e53383ab378c03bd44ef1d286caf8cac5f0bda2a'
             'a0b0551596f5c8d03aaa3956528ae2dcf6ed9be57650db387f75fc0d79a30e0e')
 
