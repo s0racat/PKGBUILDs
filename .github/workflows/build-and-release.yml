@@ -63,6 +63,11 @@ jobs:
           cd man-pages-ja
           makepkg -s --noconfirm
 
+      - name: Build linux-lts-anbox
+        run: |
+          cd linux-lts-anbox
+          makepkg -s --noconfirm --skippgpcheck
+
       - name: Create repo
         run: |
           mkdir repo
