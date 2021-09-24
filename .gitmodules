@@ -19,3 +19,6 @@
 [submodule "mpris-rp-git"]
 	path = mpris-rp-git
 	url = https://aur.archlinux.org/mpris-rp-git.git
+[submodule "pkgbuilds"]
+	path = pkgbuilds
+	url = https://github.com/sheepla/pkgbuilds

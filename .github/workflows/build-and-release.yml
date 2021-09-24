@@ -63,6 +63,16 @@ jobs:
           cd man-pages-ja
           makepkg -s --noconfirm
 
+      - name: Build pkgbuilds/ttf-plemol-jp
+        run: |
+          cd pkgbuilds/ttf-plemol-jp
+          makepkg -s --noconfirm
+
+      - name: Build search-orphans-pkgs-pacman-hook
+        run: |
+          cd search-orphans-pkgs-pacman-hook
+          makepkg -s --noconfirm
+
       - name: Build linux-lts-anbox
         run: |
           cd linux-lts-anbox
