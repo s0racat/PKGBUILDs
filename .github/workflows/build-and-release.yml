@@ -73,11 +73,6 @@ jobs:
           cd search-orphans-pkgs-pacman-hook
           makepkg -s --noconfirm
 
-      - name: Build linux-lts-anbox
-        run: |
-          cd linux-lts-anbox
-          makepkg -s --noconfirm --skippgpcheck
-
       - name: Create repo
         run: |
           mkdir repo
