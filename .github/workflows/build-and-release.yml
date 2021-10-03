@@ -78,6 +78,11 @@ jobs:
           cd cloudflared-client
           makepkg -s --noconfirm
 
+      - name: Build nwipe
+        run: |
+          cd nwipe
+          makepkg -s --noconfirm
+
       - name: Create repo
         run: |
           mkdir repo

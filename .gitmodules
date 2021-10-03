@@ -22,3 +22,6 @@
 [submodule "pkgbuilds"]
 	path = pkgbuilds
 	url = https://github.com/sheepla/pkgbuilds
+[submodule "nwipe"]
+	path = nwipe
+	url = https://aur.archlinux.org/nwipe.git
