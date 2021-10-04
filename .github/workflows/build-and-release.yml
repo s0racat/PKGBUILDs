@@ -83,6 +83,11 @@ jobs:
           cd nwipe
           makepkg -s --noconfirm
 
+      - name: Build kernel
+        run: |
+          cd linux-lts-alice
+          makepkg -s --noconfirm --skippgpcheck
+
       - name: Create repo
         run: |
           mkdir repo
