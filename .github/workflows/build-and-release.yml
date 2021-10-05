@@ -73,11 +73,6 @@ jobs:
           cd search-orphans-pkgs-pacman-hook
           makepkg -s --noconfirm
 
-      - name: Build cloudflared-client
-        run: |
-          cd cloudflared-client
-          makepkg -s --noconfirm
-
       - name: Build nwipe
         run: |
           cd nwipe
