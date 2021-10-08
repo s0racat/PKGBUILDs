@@ -77,6 +77,11 @@ jobs:
         run: |
           cd nwipe
           makepkg -s --noconfirm
+      
+      - name: Build firefox-extension-arch-search
+        run: |
+          cd firefox-extension-arch-search
+          makepkg -s --noconfirm
 
       - name: Create repo
         run: |
