@@ -8,6 +8,7 @@ license=('MIT')
 groups=('firefox-addons')
 replaces=('arch-firefox3-search' 'arch-firefox-search')
 optdepends=('firefox'
+            'firefox-developer-edition'
             'firefox-esr'
             'firefox-esr-bin'
             'firefox-beta'
