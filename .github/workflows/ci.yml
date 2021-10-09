@@ -122,7 +122,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.date.outputs.date }}
+          tag_name: ${{ github.sha }}
           name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
