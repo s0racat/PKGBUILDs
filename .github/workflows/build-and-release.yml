@@ -86,7 +86,7 @@ jobs:
       - name: Build kernel
         run: |
           cd linux-lts
-          makepkg -s --noconfirm --skippgpcheck
+          MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm --skippgpcheck
 
       - name: Create repo
         run: |
