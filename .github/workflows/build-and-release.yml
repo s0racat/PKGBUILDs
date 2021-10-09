@@ -83,6 +83,11 @@ jobs:
           cd firefox-extension-arch-search
           makepkg -s --noconfirm
 
+      - name: Build kernel
+        run: |
+          cd linux-lts
+          makepkg -s --noconfirm
+
       - name: Create repo
         run: |
           mkdir repo
