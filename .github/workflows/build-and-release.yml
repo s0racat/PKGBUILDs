@@ -86,7 +86,7 @@ jobs:
       - name: Build kernel
         run: |
           cd linux-lts
-          makepkg -s --noconfirm
+          makepkg -s --noconfirm --skippgpcheck
 
       - name: Create repo
         run: |
