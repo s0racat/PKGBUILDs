@@ -1,6 +1,6 @@
 # PKGBUILDs
 
-[![CI](https://github.com/soracqt/PKGBUILDs/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/soracqt/PKGBUILDs/actions/workflows/build-and-release.yml)
+[![CI](https://github.com/soracqt/PKGBUILDs/actions/workflows/ci.yml/badge.svg)](https://github.com/soracqt/PKGBUILDs/actions/workflows/ci.yml)
 
 ```bash
 pacman -S --needed base-devel
