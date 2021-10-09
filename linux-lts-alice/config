@@ -6675,6 +6675,6 @@ CONFIG_TEST_KSTRTOX=y
 # CONFIG_TEST_FREE_PAGES is not set
 # CONFIG_TEST_FPU is not set
 # CONFIG_MEMTEST is not set
+CONFIG_RMI4_SMB=m
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
-CONFIG_RMI4_SMB=m
