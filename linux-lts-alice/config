@@ -6677,7 +6677,6 @@ CONFIG_TEST_KSTRTOX=y
 # CONFIG_MEMTEST is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
-CONFIG_MOUSE_PS2_SYNAPTICS_SMBUS=y
 CONFIG_RMI4_SMB=m
 CONFIG_CRYPTO=y
 CONFIG_CRYPTO_ALGAPI=y
