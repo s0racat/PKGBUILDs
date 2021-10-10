@@ -6,11 +6,11 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-branches: [ master ]
+  branches: [ master ]
   pull_request:
-branches: [ master ]
-    tags:
-      - "v*.*.*"
+  branches: [ master ]
+  tags:
+  - "v*.*.*"
 
   schedule:
     - cron: '0 0 * * *'
