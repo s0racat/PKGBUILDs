@@ -126,8 +126,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.vars.outputs.sha_short }}
-          name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
           files: |
