@@ -55,7 +55,7 @@ prepare() {
   cp ../config .config
   make olddefconfig
   
-  make LSMOD=$srcdir/modprobed-db localmodconfig
+  make LSMOD=$srcdir/modprobed.db localmodconfig
 #return 1
   make -s kernelrelease > version
   echo "Prepared $pkgbase version $(<version)"
