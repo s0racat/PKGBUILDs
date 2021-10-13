@@ -43,6 +43,7 @@ jobs:
 
       - name: update linux-lts-alice
         run: |
+          sed -i "s|exit \$E_ROOT|#exit \$E_ROOT|" /usr/bin/makepkg
           cd linux-lts-alice
           make
           git config --local user.name 'soracqt'
