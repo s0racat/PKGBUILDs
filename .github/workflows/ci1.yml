@@ -46,7 +46,3 @@ jobs:
           sed -i "s|exit \$E_ROOT|#exit \$E_ROOT|" /usr/bin/makepkg
           cd linux-lts-alice
           make
-          git config --local user.name 'soracqt'
-          git config --local user.email '72482919+soracqt@users.noreply.github.com'
-          git remote set-url origin https://soracqt:${GITHUB_TOKEN}@github.com/soracqt/PKGBUILDs.git
-          git commit -am "update linux-lts-alice" && git push origin master || echo "No changes to commit"

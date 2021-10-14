@@ -34,7 +34,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install requirements
         run: |
-          pacman -Sy base-devel git --needed --noconfirm
+          pacman -Sy base-devel git pacman-contrib wget --needed --noconfirm
           sed -i "s|exit \$E_ROOT|#exit \$E_ROOT|" /usr/bin/makepkg
 
       - uses: actions/checkout@v2
@@ -46,6 +46,11 @@ jobs:
         run: |
           git pull --recurse-submodules
           git submodule update --remote --recursive
+
+      - name: update linux-lts-alice
+        run: |
+          cd linux-lts-alice
+          make
 
       - name: Commit update
         run: |
@@ -107,14 +112,6 @@ jobs:
     steps:
 
       - uses: actions/checkout@v2
-
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
-
-      - name: Set outputs
-        id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Download artifact
         uses: actions/download-artifact@v2
