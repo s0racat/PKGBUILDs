@@ -10328,4 +10328,3 @@ CONFIG_TEST_KSTRTOX=y
 # CONFIG_HYPERV_TESTING is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
-# this is kuso
