@@ -34,7 +34,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install requirements
         run: |
-          pacman -Sy base-devel git pacman-contrib --needed --noconfirm
+          pacman -Sy base-devel git pacman-contrib wget --needed --noconfirm
 
       - uses: actions/checkout@v2
         with:
