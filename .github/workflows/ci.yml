@@ -88,11 +88,6 @@ jobs:
           cd firefox-extension-arch-search
           makepkg -s --noconfirm
 
-      - name: Build memtest86-efi
-        run: |
-          cd memtest86-efi
-          makepkg -s --noconfirm
-
       - name: Build kernel
         run: |
           cd linux-lts-alice

@@ -25,6 +25,3 @@
 [submodule "nwipe"]
 	path = nwipe
 	url = https://aur.archlinux.org/nwipe.git
-[submodule "memtest86-efi"]
-	path = memtest86-efi
-	url = https://aur.archlinux.org/memtest86-efi.git
