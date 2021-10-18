@@ -1,5 +1,6 @@
 8250_dw
 ac97_bus
+acpi_cpufreq
 acpi_pad
 acpi_tad
 acpi_thermal_rel
@@ -12,6 +13,7 @@ algif_skcipher
 atkbd
 bluetooth
 bnep
+bpf_preload
 bridge
 br_netfilter
 btbcm
