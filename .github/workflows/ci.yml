@@ -92,7 +92,6 @@ jobs:
         run: |
           sed -i 's/-march=.*/-march=skylake/g' /etc/makepkg.conf
           sed -i 's/MAKEFLAGS=.*/MAKEFLAGS=-j\$\(nproc\)/' /etc/makepkg.conf
-          sed -i 's|^#BUILDDIR|BUILDDIR=/tmp/makepkg|' /etc/makepkg.conf
           cd linux-lts-alice
           makepkg -s --noconfirm --skippgpcheck
 
