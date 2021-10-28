@@ -90,6 +90,7 @@ jobs:
 
       - name: Build kernel
         run: |
+          sed -i 's/-march=.*/-march=skylake/g' /etc/makepkg.conf
           cd linux-lts-alice
           env MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm --skippgpcheck
 
