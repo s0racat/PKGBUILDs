@@ -93,6 +93,11 @@ jobs:
           cd firefox-extension-arch-search
           makepkg -s --noconfirm
 
+      - name: Build firefox ublock origin
+        run: | 
+          cd ublock-origin
+          makepkg -s --noconfirm --skippgpcheck
+
       - name: Build kernel
         run: |
           sed -i 's/-march=.*/-march=skylake/g' /etc/makepkg.conf
