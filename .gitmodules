@@ -25,3 +25,6 @@
 [submodule "nwipe"]
 	path = nwipe
 	url = https://aur.archlinux.org/nwipe.git
+[submodule "firefox-beta-bin"]
+	path = firefox-beta-bin
+	url = https://aur.archlinux.org/firefox-beta-bin.git
