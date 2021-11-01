@@ -86,7 +86,7 @@ jobs:
       - name: Build firefox beta
         run: |
           cd firefox-beta-bin
-          makepkg -s --noconfirm --skippgpcheck
+          makepkg -s --noconfirm
       
       - name: Build firefox-extension-arch-search
         run: |
