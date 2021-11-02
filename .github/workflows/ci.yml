@@ -34,7 +34,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install requirements
         run: |
-          pacman -Sy base-devel git wget screen --needed --noconfirm
+          pacman -Sy base-devel git wget --needed --noconfirm
           sed -i "s|exit \$E_ROOT|#exit \$E_ROOT|" /usr/bin/makepkg
 
       - uses: actions/checkout@v2
@@ -96,7 +96,7 @@ jobs:
       - name: Build firefox ublock origin
         run: | 
           cd ublock-origin
-          makepkg -s --noconfirm --skippgpcheck
+          makepkg -s --noconfirm --skippgpcheck --nocheck
 
       - name: Build kernel
         run: |
