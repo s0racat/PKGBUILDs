@@ -82,21 +82,11 @@ jobs:
         run: |
           cd nwipe
           makepkg -s --noconfirm
-
-      - name: Build firefox beta
-        run: |
-          cd firefox-beta-bin
-          makepkg -s --noconfirm
       
       - name: Build firefox-extension-arch-search
         run: |
           cd firefox-extension-arch-search
           makepkg -s --noconfirm
-
-      - name: Build firefox ublock origin
-        run: | 
-          cd ublock-origin
-          makepkg -s --noconfirm --skippgpcheck --nocheck
 
       - name: Build kernel
         run: |
