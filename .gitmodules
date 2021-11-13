@@ -4,9 +4,6 @@
 [submodule "paru-bin"]
 	path = paru-bin
 	url = https://aur.archlinux.org/paru-bin.git
-[submodule "man-pages-ja"]
-	path = man-pages-ja
-	url = https://aur.archlinux.org/man-pages-ja.git
 [submodule "ttf-firge"]
 	path = ttf-firge
 	url = https://aur.archlinux.org/ttf-firge.git
@@ -19,9 +16,6 @@
 [submodule "mpris-rp-git"]
 	path = mpris-rp-git
 	url = https://aur.archlinux.org/mpris-rp-git.git
-[submodule "pkgbuilds"]
-	path = pkgbuilds
-	url = https://github.com/sheepla/pkgbuilds
 [submodule "nwipe"]
 	path = nwipe
 	url = https://aur.archlinux.org/nwipe.git
