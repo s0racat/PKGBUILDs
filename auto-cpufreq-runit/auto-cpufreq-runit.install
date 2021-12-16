@@ -1,0 +1,6 @@
+post_install() {
+    cat <<EOF
+	enable: rsv enable auto-cpufreq
+	disable: rsv disable auto-cpufreq
+EOF
+}
