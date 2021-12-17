@@ -10,6 +10,6 @@ install=$pkgname.install
 source=("https://raw.githubusercontent.com/AdnanHodzic/auto-cpufreq/master/scripts/run")
 
 package() {
-	install -Dm644 $srcdir/run $pkgdir/etc/runit/sv/auto-cpufreq/run
+	install -Dm755 $srcdir/run $pkgdir/etc/runit/sv/auto-cpufreq/run
 }
 sha256sums=('3bcba5cdf07b035eeddaa25c60c27548ed6eae81d70c6ad0de8036d9e6abe3c2')
