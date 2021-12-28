@@ -3,13 +3,16 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc="install auto-cpufreq runit script"
 arch=(any)
-url="https://github.com/AdnanHodzic/auto-cpufreq/blob/master/scripts/run"
+url="https://github.com/AdnanHodzic/auto-cpufreq/blob/master/scripts/auto-cpufreq-runit"
 optdepends=('auto-cpufreq'
 	    'auto-cpufreq-git')
 install=$pkgname.install
-source=("https://raw.githubusercontent.com/AdnanHodzic/auto-cpufreq/master/scripts/run")
+source=("run::https://raw.githubusercontent.com/AdnanHodzic/auto-cpufreq/master/scripts/auto-cpufreq-runit")
 
+prepare() {
+    sed -i "s|/local||" $srcdir/run
+}
 package() {
 	install -Dm755 $srcdir/run $pkgdir/etc/runit/sv/auto-cpufreq/run
 }
-sha256sums=('3bcba5cdf07b035eeddaa25c60c27548ed6eae81d70c6ad0de8036d9e6abe3c2')
+sha256sums=('2e841f883d2788e3c1f1342f9e88f72a176e42fa8427eea7a4f29da5b4845761')
