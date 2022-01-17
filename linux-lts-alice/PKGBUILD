@@ -1,5 +1,5 @@
 pkgbase=linux-lts-alice
-pkgver=5.10.91
+pkgver=5.15.15
 pkgrel=1
 pkgdesc='LTS Linux'
 url="https://www.kernel.org/"
@@ -22,9 +22,9 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256sums=('62cefb84c1c63a048520ff74eca4b16ce375956c351c8227bf9e4869cd8595d1'
+sha256sums=('1d3c57cf8071af174933df3e5d77da801e240a59da3c5e8406f7769de2c83a5a'
             'SKIP'
-            '983f56e1b138767fb14317a5ff78cbad459a2d3cd6dc3dfd8d19d1d77e2f6ae8'
+            '8b1af8ba020ab45ef985167b97790bd2338082c77a04c533e1a13b3415c5cd10'
             '96a72e1652314215da7140956c3abcf495cafd00811eda3cf4ce03ec5f791f1e'
             '340810c47b15aca1a566d6974c2634e495c7dd5ffc84246a3850f308d3e1d481')
 
