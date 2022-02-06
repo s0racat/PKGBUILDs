@@ -1,32 +1,36 @@
-diff --git a/linux-lts/PKGBUILD b/linux-lts/PKGBUILD
-index eb5fa47..4244a7c 100644
---- a/linux-lts/PKGBUILD
-+++ b/linux-lts/PKGBUILD
-@@ -1,6 +1,7 @@
- # Maintainer: Andreas Radke <andyrtr@archlinux.org>
+diff --git a/PKGBUILD b/PKGBUILD
+index c1013cd..02fd8cf 100644
+--- a/PKGBUILD
++++ b/PKGBUILD
+@@ -16,7 +16,14 @@ arch=('any')
+ url="https://github.com/noraj/firefox-extension-arch-search"
+ license=('MIT')
+ groups=('firefox-addons')
+-depends=("firefox")
++#depends=("firefox")
++optdepends=('firefox'
++            'firefox-developer-edition'
++            'firefox-esr'
++            'firefox-esr-bin'
++            'firefox-beta'
++            'firefox-beta-bin'
++            'firefox-nightly')
+ replaces=('arch-firefox3-search' 'arch-firefox-search')
+ source=("https://addons.mozilla.org/firefox/downloads/file/3658546/archlinux_aur_search-$_alaur_ver-fx.xpi"
+         "https://addons.mozilla.org/firefox/downloads/file/3658547/archlinux_bugtracker_by_fs_search-$_albugsfs_ver-fx.xpi"
+@@ -57,4 +64,15 @@ package() {
+   install -Dm644 "archlinux_manual_pages_search-$_alman_ver-fx.xpi" "$pkgdir/usr/lib/firefox/browser/extensions/ArchMan@archlinux.org"
  
--pkgbase=linux-lts
-+#pkgbase=linux-lts
-+pkgbase=linux-lts-alice
- pkgver=5.15.21
- pkgrel=1
- pkgdesc='LTS Linux'
-@@ -71,7 +72,7 @@ prepare() {
- build() {
-   cd $_srcname
-   make all
--  make htmldocs
-+  #make htmldocs
+   install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
++  mkdir -vp $pkgdir/usr/lib/firefox-developer-edition/browser/extensions \
++        $pkgdir/opt/{firefox-esr,firefox-beta,firefox-nightly}/browser/extensions
++
++    for i in *archlinux.org*; do
++        cd $pkgdir/usr/lib/firefox/browser/extensions
++        ADDON=$(realpath $i | sed "s|$pkgdir||")
++        ln -s $ADDON $pkgdir/usr/lib/firefox-developer-edition/browser/extensions
++        ln -s $ADDON $pkgdir/opt/firefox-esr/browser/extensions
++        ln -s $ADDON $pkgdir/opt/firefox-beta/browser/extensions
++        ln -s $ADDON $pkgdir/opt/firefox-nightly/browser/extensions
++    done
  }
- 
- _package() {
-@@ -202,7 +203,8 @@ _package-docs() {
-   ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
- }
- 
--pkgname=("$pkgbase" "$pkgbase-headers" "$pkgbase-docs")
-+#pkgname=("$pkgbase" "$pkgbase-headers" "$pkgbase-docs")
-+pkgname=("$pkgbase" "$pkgbase-headers")
- for _p in "${pkgname[@]}"; do
-   eval "package_$_p() {
-     $(declare -f "_package${_p#$pkgbase}")
