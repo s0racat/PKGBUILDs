@@ -64,13 +64,6 @@ jobs:
           cd nwipe
           makepkg -s --noconfirm
       
-      - name: Build firefox-extension-arch-search
-        run: |
-          git clone https://aur.archlinux.org/firefox-extension-arch-search
-          cd firefox-extension-arch-search
-          patch < ../1.patch
-          makepkg -s --noconfirm
-
       - name: Create repo
         run: |
           mkdir repo
