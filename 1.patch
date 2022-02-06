@@ -1,0 +1,32 @@
+diff --git a/linux-lts/PKGBUILD b/linux-lts/PKGBUILD
+index eb5fa47..4244a7c 100644
+--- a/linux-lts/PKGBUILD
++++ b/linux-lts/PKGBUILD
+@@ -1,6 +1,7 @@
+ # Maintainer: Andreas Radke <andyrtr@archlinux.org>
+ 
+-pkgbase=linux-lts
++#pkgbase=linux-lts
++pkgbase=linux-lts-alice
+ pkgver=5.15.21
+ pkgrel=1
+ pkgdesc='LTS Linux'
+@@ -71,7 +72,7 @@ prepare() {
+ build() {
+   cd $_srcname
+   make all
+-  make htmldocs
++  #make htmldocs
+ }
+ 
+ _package() {
+@@ -202,7 +203,8 @@ _package-docs() {
+   ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
+ }
+ 
+-pkgname=("$pkgbase" "$pkgbase-headers" "$pkgbase-docs")
++#pkgname=("$pkgbase" "$pkgbase-headers" "$pkgbase-docs")
++pkgname=("$pkgbase" "$pkgbase-headers")
+ for _p in "${pkgname[@]}"; do
+   eval "package_$_p() {
+     $(declare -f "_package${_p#$pkgbase}")
