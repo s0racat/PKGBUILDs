@@ -5,7 +5,7 @@
 ## discord_arch_electron
 
 ```bash
-yay -G discord_arch_electron
+git clone https://aur.archlinux.org/discord_arch_electron
 cd discord_arch_electron
 patch < <(curl https://raw.githubusercontent.com/soracqt/PKGBUILDs/master/discord_arch_electron/0001-Enable-HardwareAcceleration.patch)
 makepkg -srcCi
@@ -14,7 +14,7 @@ makepkg -srcCi
 ## firefox-extension-arch-search
 
 ```bash
-yay -G firefox-extension-arch-search
+git clone https://aur.archlinux.org/firefox-extension-arch-search
 cd firefox-extension-arch-search
 patch < <(curl https://raw.githubusercontent.com/soracqt/PKGBUILDs/master/firefox-extension-arch-search/0001-Create-link-to-other-firefox-ver.patch)
 makepkg -srcCi
