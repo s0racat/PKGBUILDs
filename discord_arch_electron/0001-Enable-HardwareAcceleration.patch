@@ -6,8 +6,8 @@ index 2b35fc0..7cd7e15 100644
  
    # Create starter script for discord
    echo "#!/bin/sh" > "$srcdir"/$_pkgname
--  echo "exec electron15 /usr/lib/$_pkgname/app.asar \$@" >> "$srcdir"/$_pkgname
-+  echo "exec electron15 --enable-accelerated-mjpeg-decode --enable-accelerated-video --ignore-gpu-blacklist --enable-native-gpu-memory-buffers --enable-gpu-rasterization /usr/lib/$_pkgname/app.asar \$@" >> "$srcdir"/$_pkgname
+-  echo "exec electron16 /usr/lib/$_pkgname/app.asar \$@" >> "$srcdir"/$_pkgname
++  echo "exec electron16 --enable-accelerated-mjpeg-decode --enable-accelerated-video --ignore-gpu-blacklist --enable-native-gpu-memory-buffers --enable-gpu-rasterization /usr/lib/$_pkgname/app.asar \$@" >> "$srcdir"/$_pkgname
  
    install -d "$pkgdir"/usr/{bin,share/{pixmaps,applications}}
    install -Dm 755 $_pkgname "$pkgdir"/usr/bin/$_pkgname
