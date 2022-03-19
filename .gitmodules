@@ -4,9 +4,6 @@
 [submodule "ttf-firge"]
 	path = ttf-firge
 	url = https://aur.archlinux.org/ttf-firge.git
-[submodule "ttf-hackgen-nerd"]
-	path = ttf-hackgen-nerd
-	url = https://aur.archlinux.org/ttf-hackgen-nerd.git
 [submodule "fonts-seto"]
 	path = fonts-seto
 	url = https://aur.archlinux.org/fonts-seto.git
