@@ -4,9 +4,9 @@
 [submodule "ttf-firge"]
 	path = ttf-firge
 	url = https://aur.archlinux.org/ttf-firge.git
-[submodule "fonts-seto"]
-	path = fonts-seto
-	url = https://aur.archlinux.org/fonts-seto.git
 [submodule "mpris-rp-git"]
 	path = mpris-rp-git
 	url = https://aur.archlinux.org/mpris-rp-git.git
+[submodule "ttf-seto"]
+	path = ttf-seto
+	url = https://aur.archlinux.org/ttf-seto
