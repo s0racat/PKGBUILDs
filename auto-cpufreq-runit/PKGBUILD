@@ -5,7 +5,8 @@ pkgdesc="install auto-cpufreq runit script"
 arch=(any)
 url="https://github.com/AdnanHodzic/auto-cpufreq/blob/master/scripts/auto-cpufreq-runit"
 optdepends=('auto-cpufreq'
-	    'auto-cpufreq-git')
+	    'auto-cpufreq-git'
+            'rsv: Can operate runit service easily')
 install=$pkgname.install
 source=("run::https://raw.githubusercontent.com/AdnanHodzic/auto-cpufreq/master/scripts/auto-cpufreq-runit")
 
