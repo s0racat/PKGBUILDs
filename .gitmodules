@@ -4,9 +4,9 @@
 [submodule "ttf-firge"]
 	path = ttf-firge
 	url = https://aur.archlinux.org/ttf-firge.git
-[submodule "mpris-rp-git"]
-	path = mpris-rp-git
-	url = https://aur.archlinux.org/mpris-rp-git.git
 [submodule "ttf-seto"]
 	path = ttf-seto
 	url = https://aur.archlinux.org/ttf-seto
+[submodule "yaskkserv2-bin"]
+	path = yaskkserv2-bin
+	url = https://aur.archlinux.org/yaskkserv2-bin
