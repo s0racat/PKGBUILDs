@@ -1,0 +1,20 @@
+diff --git a/PKGBUILD b/PKGBUILD
+index c5b0130..3e6ab8f 100644
+--- a/PKGBUILD
++++ b/PKGBUILD
+@@ -20,6 +20,7 @@ prepare() {
+     cat script/configure.perl.org                |
+     sed '/until/i$ans = "y";'                    |
+     sed "/usr[/]share[/]man[/]/s@/@${pkgdir}/@1" > script/configure.perl
++    sed -i 's/$LANG/ja_JP.UTF-8/g' script/configure.perl
+ }
+ 
+ build() {
+@@ -28,7 +29,6 @@ build() {
+ }
+ 
+ package() {
+-    mkdir -p ${pkgdir}/usr/share/man/${LANG}
+     cd ${srcdir}/${pkgname}-${pkgver}
+     make install
+ }
