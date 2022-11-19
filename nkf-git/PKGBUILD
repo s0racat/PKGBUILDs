@@ -9,7 +9,7 @@ url="https://osdn.net/projects/nkf/"
 license=('custom')
 depends=('glibc')
 conflicts=('nkf')
-source=(git+git://git.osdn.net/gitroot/nkf/nkf.git
+source=(git+https://git.osdn.net/gitroot/nkf/nkf.git
         LICENSE)
 b2sums=('SKIP'
         'b3738fe113b4f8bb27be883a6a4bef1ca209fe9e6ac9ab519bb6b5cef5154f7617d03ec6f52a8b94a83789a5eafaab14fc7364f54792784203d43ead6606b1d6')
