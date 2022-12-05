@@ -1,0 +1,14 @@
+diff --git a/PKGBUILD b/PKGBUILD
+index 1ef2ee0..8d4ff47 100644
+--- a/PKGBUILD
++++ b/PKGBUILD
+@@ -12,8 +12,7 @@ depends=('lxc' 'python' 'python-gbinder' 'python-gobject' 'nftables' 'dnsmasq')
+ makedepends=('git')
+ optdepends=('waydroid-image: Android image for use with waydroid'
+             'python-pyclip: share clipboard with container')
+-_commit="6b89a1c8228b95d8b61afdf5c67212e6a9bc35e3" # tags/1.3.3
+-source=("waydroid::git+https://github.com/waydroid/waydroid.git#commit=$_commit"
++source=("waydroid::git+https://github.com/waydroid/waydroid.git#tag=$pkgver"
+         gbinder.conf)
+ 
+ pkgver() {
