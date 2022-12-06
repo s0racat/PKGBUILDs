@@ -39,30 +39,13 @@ jobs:
           sed -i "s|exit \$E_ROOT|#exit \$E_ROOT|" /usr/bin/makepkg
 
       - uses: actions/checkout@v2
-        with:
-          submodules: true
-          fetch-depth: 0
-
-            #      - name: Git Submodule Update                                                  
-            #        run: |
-            #          git pull --recurse-submodules
-            #          git submodule update --remote --recursive
-
-            #      - name: Commit update
-            #        run: |
-            #          git config --global user.name 'github-actions[bot]'
-            #          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-            #          git commit -am "Update version" && git push || echo "No changes to commit"
 
       - name: Build nkf-git
+        id: pkgver
         run: |
           cd nkf-git
           makepkg -s --noconfirm
-
-#      - name: Build nwipe
-#        run: |
-#          cd nwipe
-#          makepkg -s --noconfirm
+          echo "pkgver=$(grep pkgver= PKGBUILD | sed -e 's/pkgver=//')" >> $GITHUB_OUTPUT
       
       - name: Create repo
         run: |
@@ -88,10 +71,11 @@ jobs:
           name: pkgs-x86_64
 
       - name: Create release
-        uses: marvinpinto/action-automatic-releases@latest
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          tag_name: ${{ jobs.build.pkgver.output.pkgver }}
           prerelease: false
           files: |
             *.tar.*
