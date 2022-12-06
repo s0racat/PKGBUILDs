@@ -45,7 +45,7 @@ jobs:
         run: |
           cd nkf-git
           makepkg -s --noconfirm
-          echo "pkgver=$(grep pkgver= PKGBUILD | sed -e 's/pkgver=//')" >> $GITHUB_OUTPUT
+          echo "pkgver=$(grep pkgver= PKGBUILD | sed -e 's/pkgver=//')" >> $GITHUB_ENV
       
       - name: Create repo
         run: |
@@ -75,7 +75,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ jobs.build.steps.pkgver.outputs.pkgver }}
+          tag_name: ${{ env.pkgver }}
           prerelease: false
           files: |
             *.tar.*
