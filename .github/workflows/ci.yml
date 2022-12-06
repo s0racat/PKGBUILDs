@@ -75,7 +75,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ jobs.build.pkgver.output.pkgver }}
+          tag_name: ${{ jobs.build.pkgver.outputs.pkgver }}
           prerelease: false
           files: |
             *.tar.*
