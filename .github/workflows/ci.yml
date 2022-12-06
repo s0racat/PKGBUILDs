@@ -54,49 +54,47 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git commit -am "Update version" && git push || echo "No changes to commit"
 
-#      - name: Build paru-bin
-#        run: |
-#          cd paru-bin
-#          makepkg -s --noconfirm
+      - name: Build nkf-git
+        run: |
+          cd nkf-git
+          makepkg -s --noconfirm
 
 #      - name: Build nwipe
 #        run: |
 #          cd nwipe
 #          makepkg -s --noconfirm
       
-#      - name: Create repo
-#        run: |
-#          mkdir repo
-#          find . -type f -name "*.pkg.tar.zst" -exec cp {} repo/ \;
-#          cd repo
-#          repo-add custom.db.tar.gz *.pkg.tar.zst
+      - name: Create repo
+        run: |
+          mkdir repo
+          find . -type f -name "*.pkg.tar.zst" -exec cp {} repo/ \;
+          cd repo
+          repo-add soracat.db.tar.gz *.pkg.tar.zst
 
-#      - name: Upload artifact
-#        uses: actions/upload-artifact@v1
-#        with:
-#          name: pkgs-x86_64
-#          path: repo
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: pkgs-x86_64
+          path: repo
 
-#  release:
-#    runs-on: ubuntu-latest
-#    needs: [build]
-#    steps:
+  release:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
 
-#      - uses: actions/checkout@v2
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: pkgs-x86_64
 
-#      - name: Download artifact
-#        uses: actions/download-artifact@v2
-#        with:
-#          name: pkgs-x86_64
-
-#      - name: Create release
-#        uses: marvinpinto/action-automatic-releases@latest
-#        with:
-#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-#          automatic_release_tag: "latest"
-#          prerelease: false
-#          files: |
-#            *.tar.*
-#            custom.db
-#            custom.files
+      - name: Create release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          files: |
+            *.tar.*
+            soracat.db
+            soracat.files
 
