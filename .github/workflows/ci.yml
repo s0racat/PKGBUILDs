@@ -43,16 +43,16 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      - name: Git Submodule Update                                                  
-        run: |
-          git pull --recurse-submodules
-          git submodule update --remote --recursive
+            #      - name: Git Submodule Update                                                  
+            #        run: |
+            #          git pull --recurse-submodules
+            #          git submodule update --remote --recursive
 
-      - name: Commit update
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git commit -am "Update version" && git push || echo "No changes to commit"
+            #      - name: Commit update
+            #        run: |
+            #          git config --global user.name 'github-actions[bot]'
+            #          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+            #          git commit -am "Update version" && git push || echo "No changes to commit"
 
       - name: Build nkf-git
         run: |
