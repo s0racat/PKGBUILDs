@@ -25,7 +25,7 @@ index 3f8cea6..fed6315 100644
  
  arch=(x86_64 i386 armv7h x86_64_v3 aarch64 pentium4)
 -depends=(fmt spdlog nlohmann-json systemd libelf zlib libbpf)
-+depends=(libfmt.so=9 libspdlog.so=1.11 libelf zlib libbpf)
++depends=(libfmt.so=9 libspdlog.so=1.11 libbpf.so=1 libelf zlib)
  makedepends=(cmake clang git nlohmann-json bpf)
  optdepends=("ananicy-rules-git: community rules"
              "ananicy-rules: rules for ananicy-cpp")
