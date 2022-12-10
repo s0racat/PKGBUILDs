@@ -1,13 +1,5 @@
 # PKGBUILDs
 
-`/etc/pacman.conf`
-
-```bash
-[soracat]
-Server = https://github.com/soracqt/PKGBUILDs/releases/latest/download
-SigLevel = Never
-```
-
 ## ananicy-cpp dependencies
 
 `ldd /usr/bin/ananicy-cpp`
