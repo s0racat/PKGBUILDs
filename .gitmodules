@@ -10,3 +10,9 @@
 [submodule "yaskkserv2-bin"]
 	path = yaskkserv2-bin
 	url = https://aur.archlinux.org/yaskkserv2-bin
+[submodule "newflasher-git"]
+	path = newflasher-git
+	url = https://aur.archlinux.org/newflasher-git
+[submodule "nkf-git"]
+	path = nkf-git
+	url = https://aur.archlinux.org/nkf-git.git
