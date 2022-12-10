@@ -1,17 +1,20 @@
 diff --git a/PKGBUILD b/PKGBUILD
-index 3f8cea6..fed6315 100644
+index 3f8cea6..15da2e7 100644
 --- a/PKGBUILD
 +++ b/PKGBUILD
-@@ -7,22 +7,16 @@ pkgrel=1
+@@ -5,35 +5,27 @@ _pkgver=1.0.1
+ pkgver=${_pkgver//-/.}
+ pkgrel=1
  pkgdesc="Ananicy Cpp is a full rewrite of Ananicy in C++, featuring lower CPU and RAM usage."
- url="https://gitlab.com/ananicy-cpp/ananicy-cpp/"
+-url="https://gitlab.com/ananicy-cpp/ananicy-cpp/"
++url="https://gitlab.com/ananicy-cpp/ananicy-cpp.git"
  license=(GPLv3)
-+_commit='dfa4fdc87c7cb9bb1683125009baa7278bb85901'
  source=(
- 	"https://gitlab.com/ananicy-cpp/${pkgname}/-/archive/v${_pkgver}/${pkgname}-v${_pkgver}.tar.gz"
-+        "git+https://gitlab.com/vnepogodin/std-format#commit=$_commit"
+-	"https://gitlab.com/ananicy-cpp/${pkgname}/-/archive/v${_pkgver}/${pkgname}-v${_pkgver}.tar.gz"
++	"git+$url#tag=v${_pkgver}"
++        "git+https://gitlab.com/vnepogodin/std-format.git"
  	)
- md5sums=('e0107e820c42b17ae774a0c695780902'
+-md5sums=('e0107e820c42b17ae774a0c695780902'
 -         'e1f9d6bf78380b04a6a500a671bd8d38')
 -
 -
@@ -21,6 +24,7 @@ index 3f8cea6..fed6315 100644
 -for external in "${!externals[@]}"; do
 -	source+=(https://gitlab.com/vnepogodin/${external}/-/archive/${externals[$external]}/${external}-${externals[$external]}.tar.gz)
 -done
++md5sums=('SKIP'
 +         'SKIP')
  
  arch=(x86_64 i386 armv7h x86_64_v3 aarch64 pentium4)
@@ -29,19 +33,22 @@ index 3f8cea6..fed6315 100644
  makedepends=(cmake clang git nlohmann-json bpf)
  optdepends=("ananicy-rules-git: community rules"
              "ananicy-rules: rules for ananicy-cpp")
-@@ -30,10 +24,7 @@ optdepends=("ananicy-rules-git: community rules"
+ 
  prepare() {
- 	cd "$pkgname-v${_pkgver}"
+-	cd "$pkgname-v${_pkgver}"
++	cd "$pkgname"
  
 -	echo Externals: "${!externals[@]}"
 -	for external in "${!externals[@]}"; do
 -		mv -v "../${external}-${externals[$external]}/"* external/${external}/
 -	done
-+	mv -v $srcdir/std-format/* external/std-format
++        git submodule init
++        git config submodule."external/std-format".url "${srcdir}/std-format"
++        git -c protocol.file.allow=always submodule update
  
  	cmake -B build -S . \
  		-DCMAKE_BUILD_TYPE=Release \
-@@ -41,7 +32,7 @@ prepare() {
+@@ -41,20 +33,20 @@ prepare() {
  		-DUSE_EXTERNAL_SPDLOG=ON \
  		-DUSE_EXTERNAL_JSON=ON \
  		-DUSE_EXTERNAL_FMTLIB=ON \
@@ -50,3 +57,18 @@ index 3f8cea6..fed6315 100644
  		-DUSE_BPF_PROC_IMPL=ON \
  		-DBPF_BUILD_LIBBPF=OFF \
  		-DVERSION=${_pkgver}
+ }
+ 
+ build() {
+-	cd "$pkgname-v${_pkgver}"
++	cd "$pkgname"
+ 
+ 	cmake --build build
+ }
+ 
+ package() {
+-	cd "$pkgname-v${_pkgver}"
++	cd "$pkgname"
+ 
+ 	export DESTDIR="$pkgdir"
+ 	cmake --install build --component Runtime
