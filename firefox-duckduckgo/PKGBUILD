@@ -1,0 +1,20 @@
+pkgname=firefox-duckduckgo
+pkgver=2022.12.7
+pkgrel=1
+pkgdesc="DuckDuckGo Privacy Essentials browser extension for Firefox"
+arch=('any')
+url="https://github.com/duckduckgo/duckduckgo-privacy-extension"
+license=('Apache 2.0')
+groups=('firefox-addons')
+depends=("firefox")
+source=("https://addons.mozilla.org/firefox/downloads/file/4040713/duckduckgo_for_firefox-${pkgver}.xpi"
+        "https://raw.githubusercontent.com/duckduckgo/duckduckgo-privacy-extension/${pkgver}/LICENSE.md")
+noextract=("duckduckgo_for_firefox-${pkgver}.xpi")
+
+package() {
+  cd $srcdir
+  install -Dm644 "duckduckgo_for_firefox-${pkgver}.xpi" "$pkgdir/usr/lib/firefox/browser/extensions/jid1-ZAdIEUB7XOzOJw@jetpack.xpi"
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE.md
+}
+sha256sums=('c7780ea041e2b634e270d9ef560ef68a3048c42ce8c6a360e68abb09bbef50e3'
+            '2d27e0f63cf1f0d1314c370ac38b1e86db3827563bc1a8f5aa58281a2ff319f6')
