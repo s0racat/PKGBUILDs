@@ -1,5 +1,14 @@
+From 40b683147cc56708aecb464e6fdfd05374e01226 Mon Sep 17 00:00:00 2001
+From: Takumi <takuoh@tuta.io>
+Date: Mon, 2 Jan 2023 12:20:37 +0900
+Subject: [PATCH] Use env command to pass variable
+
+---
+ papirus-folders | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 diff --git a/papirus-folders b/papirus-folders
-index 364c7aff..98ed54bd 100755
+index 364c7af..98ed54b 100755
 --- a/papirus-folders
 +++ b/papirus-folders
 @@ -383,7 +383,7 @@ verify_privileges() {
@@ -11,3 +20,6 @@ index 364c7aff..98ed54bd 100755
  			"$THIS_SCRIPT" "${ARGS[@]}"
  	else
  		fatal "You need to be root to run this command."
+-- 
+2.39.0
+

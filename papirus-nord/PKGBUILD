@@ -9,13 +9,13 @@ depends=('papirus-icon-theme')
 conflicts=('papirus-linux-universe')
 options=('!strip')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/Adapta-Projects/Papirus-Nord/archive/refs/tags/$pkgver.tar.gz"
-        "Make-usable-in-doas.patch")
+        "0001-Use-env-command-to-pass-variable.patch")
 sha256sums=('ffdb977c22630b5151e1f4956416ccd11a29394828509f36dab99ff7e243d119'
-            'a3cff618aa97452f45f1f645323d1ce4912cd19d88512f3b8d88e31996857f27')
+            '1bae53cb4c9cb77a1aea100f3fc6ee8caf45ba91a14c4cb87162e8557b6737cb')
 
 prepare() {
     cd Papirus-Nord-$pkgver
-    patch -i $srcdir/Make-usable-in-doas.patch
+    patch -i $srcdir/0001-Use-env-command-to-pass-variable.patch
 }
 
 package() {
