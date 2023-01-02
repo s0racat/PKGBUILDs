@@ -1,5 +1,14 @@
+From 9cd7a17c8a39a0b07e47467a9487b2e3c9fe5492 Mon Sep 17 00:00:00 2001
+From: Takumi <takuoh@tuta.io>
+Date: Mon, 2 Jan 2023 12:14:20 +0900
+Subject: [PATCH] force use ja_JP.UTF-8
+
+---
+ PKGBUILD | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 diff --git a/PKGBUILD b/PKGBUILD
-index c5b0130..3e6ab8f 100644
+index dbbf046..fffc3c5 100644
 --- a/PKGBUILD
 +++ b/PKGBUILD
 @@ -20,6 +20,7 @@ prepare() {
@@ -18,3 +27,6 @@ index c5b0130..3e6ab8f 100644
      cd ${srcdir}/${pkgname}-${pkgver}
      make install
  }
+-- 
+2.39.0
+

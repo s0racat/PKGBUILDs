@@ -1,3 +1,12 @@
+From 2faf7083360a55c7904a5886990d53a9aa9a4eb4 Mon Sep 17 00:00:00 2001
+From: Takumi <takuoh@tuta.io>
+Date: Mon, 2 Jan 2023 20:07:38 +0900
+Subject: [PATCH] 1.7.1-1
+
+---
+ PKGBUILD | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
 diff --git a/PKGBUILD b/PKGBUILD
 index 6ed425d..2093fef 100644
 --- a/PKGBUILD
@@ -24,3 +33,6 @@ index 6ed425d..2093fef 100644
           'ae8c0b172c57f76594e182246ddcdac2'
           'b815ce5958a40757e15add0c42cb015f')
  package() {
+-- 
+2.39.0
+

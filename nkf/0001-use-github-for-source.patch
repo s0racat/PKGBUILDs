@@ -1,3 +1,12 @@
+From 0a8c43a4b9b70da11adb88f81e16dd57c0e9f08c Mon Sep 17 00:00:00 2001
+From: Takumi <takuoh@tuta.io>
+Date: Mon, 2 Jan 2023 12:17:10 +0900
+Subject: [PATCH] use github for source
+
+---
+ PKGBUILD | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
+
 diff --git a/PKGBUILD b/PKGBUILD
 index e0dca03..a36b31a 100644
 --- a/PKGBUILD
@@ -37,3 +46,6 @@ index e0dca03..a36b31a 100644
    install -D -m755 nkf               "${pkgdir}/usr/bin/nkf"
    install -D -m644 nkf.1             "${pkgdir}/usr/share/man/man1/nkf.1"
    install -D -m644 nkf.1j            "${pkgdir}/usr/share/man/ja/man1/nkf.1"
+-- 
+2.39.0
+

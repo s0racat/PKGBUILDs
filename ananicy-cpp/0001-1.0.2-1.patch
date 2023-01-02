@@ -1,3 +1,12 @@
+From bf0bb79359b2393d24268e2e95bbdc382b064eb2 Mon Sep 17 00:00:00 2001
+From: Takumi <takuoh@tuta.io>
+Date: Mon, 2 Jan 2023 11:47:24 +0900
+Subject: [PATCH] 1.0.2-1
+
+---
+ PKGBUILD | 33 +++++++++++++--------------------
+ 1 file changed, 13 insertions(+), 20 deletions(-)
+
 diff --git a/PKGBUILD b/PKGBUILD
 index faf818d..5d84b2b 100644
 --- a/PKGBUILD
@@ -69,3 +78,6 @@ index faf818d..5d84b2b 100644
  # vim:set sw=2 sts=2 et:
 +sha256sums=('SKIP'
 +            'SKIP')
+-- 
+2.39.0
+
