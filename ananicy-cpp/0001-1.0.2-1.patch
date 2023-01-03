@@ -1,14 +1,14 @@
-From bf0bb79359b2393d24268e2e95bbdc382b064eb2 Mon Sep 17 00:00:00 2001
+From edcf7c71d4f0f880d81b703256f6b1887dbc352f Mon Sep 17 00:00:00 2001
 From: Takumi <takuoh@tuta.io>
-Date: Mon, 2 Jan 2023 11:47:24 +0900
+Date: Mon, 2 Jan 2023 22:10:02 +0900
 Subject: [PATCH] 1.0.2-1
 
 ---
- PKGBUILD | 33 +++++++++++++--------------------
- 1 file changed, 13 insertions(+), 20 deletions(-)
+ PKGBUILD | 39 +++++++++++++++------------------------
+ 1 file changed, 15 insertions(+), 24 deletions(-)
 
 diff --git a/PKGBUILD b/PKGBUILD
-index faf818d..5d84b2b 100644
+index faf818d..c0476a5 100644
 --- a/PKGBUILD
 +++ b/PKGBUILD
 @@ -6,34 +6,25 @@ pkgver=${_pkgver//-/.}
@@ -19,8 +19,9 @@ index faf818d..5d84b2b 100644
 +url="https://gitlab.com/ananicy-cpp/ananicy-cpp.git"
  license=('GPLv3')
 -depends=(fmt spdlog nlohmann-json systemd libelf zlib libbpf)
-+depends=(libfmt.so=9 libspdlog.so=1.11 libbpf.so=1 libelf zlib)
- makedepends=(cmake ninja clang git nlohmann-json bpf)
+-makedepends=(cmake ninja clang git nlohmann-json bpf)
++depends=(libfmt.so=9 libspdlog.so=1.11)
++makedepends=(cmake git nlohmann-json)
  optdepends=("ananicy-rules-git: community rules"
              "ananicy-rules: Rules based for ananicy-cpp")
 -source=("https://gitlab.com/ananicy-cpp/${pkgname}/-/archive/v${_pkgver}/${pkgname}-v${_pkgver}.tar.gz")
@@ -55,16 +56,24 @@ index faf818d..5d84b2b 100644
  
    _cpuCount=$(grep -c -w ^processor /proc/cpuinfo)
  
-@@ -48,7 +39,7 @@ build() {
+@@ -42,25 +33,25 @@ build() {
+   export LDFLAGS="${LDFLAGS}"
+ 
+   cmake -S . -Bbuild \
+-        -GNinja \
+         -DCMAKE_BUILD_TYPE=Release \
+         -DCMAKE_INSTALL_PREFIX=/usr \
          -DUSE_EXTERNAL_SPDLOG=ON \
          -DUSE_EXTERNAL_JSON=ON \
          -DUSE_EXTERNAL_FMTLIB=ON \
 -        -DENABLE_SYSTEMD=ON \
+-        -DUSE_BPF_PROC_IMPL=ON \
+-        -DBPF_BUILD_LIBBPF=OFF \
 +        -DENABLE_SYSTEMD=OFF \
-         -DUSE_BPF_PROC_IMPL=ON \
-         -DBPF_BUILD_LIBBPF=OFF \
++        -DUSE_BPF_PROC_IMPL=OFF \
          -DVERSION=${_pkgver}
-@@ -57,10 +48,12 @@ build() {
+ 
+   cmake --build build --target ananicy-cpp --parallel $_cpuCount
  }
  
  package() {
