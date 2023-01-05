@@ -1,5 +1,5 @@
 pkgname=firefox-duckduckgo
-pkgver=2022.12.7
+pkgver="2022.12.27"
 pkgrel=1
 pkgdesc="DuckDuckGo Privacy Essentials browser extension for Firefox"
 arch=('any')
@@ -10,6 +10,11 @@ depends=("firefox")
 source=("https://addons.mozilla.org/firefox/downloads/file/4040713/duckduckgo_for_firefox-${pkgver}.xpi"
         "https://raw.githubusercontent.com/duckduckgo/duckduckgo-privacy-extension/${pkgver}/LICENSE.md")
 noextract=("duckduckgo_for_firefox-${pkgver}.xpi")
+
+pkgver(){
+    wget -qO - https://addons.mozilla.org/firefox/downloads/latest/duckduckgo-for-firefox/addon-385621-latest.xpi | bsdtar xf - -C $srcdir manifest.json
+    jq '.version' manifest.json
+}
 
 package() {
   cd $srcdir
