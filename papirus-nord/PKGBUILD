@@ -6,7 +6,7 @@ arch=('any')
 url="https://www.pling.com/p/1360398"
 license=('GPL2')
 depends=('papirus-icon-theme')
-conflicts=('papirus-linux-universe')
+conflicts=('papirus-linux-universe' 'papirus-folders')
 options=('!strip')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/Adapta-Projects/Papirus-Nord/archive/refs/tags/$pkgver.tar.gz"
         "0001-Use-env-command-to-pass-variable.patch")
