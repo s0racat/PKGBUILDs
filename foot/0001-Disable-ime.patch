@@ -1,0 +1,32 @@
+--- PKGBUILD.org	2023-04-05 23:19:54.250234827 +0900
++++ PKGBUILD	2023-04-05 23:20:58.260671795 +0900
+@@ -3,7 +3,7 @@
+ 
+ pkgbase=foot
+ pkgdesc='Fast, lightweight, and minimalistic Wayland terminal emulator'
+-pkgname=($pkgbase $pkgbase-terminfo)
++pkgname=($pkgbase)
+ pkgver=1.14.0
+ pkgrel=1
+ url="https://codeberg.org/dnkl/$pkgbase"
+@@ -36,6 +36,7 @@
+ 		. build \
+ 		-Dterminfo=disabled \
+ 		--prefix=/usr \
++                -Dime=false \
+ 		--wrap-mode=nodownload
+ 	sed 's/@default_terminfo@/foot-extra/g' foot.info |
+ 		tic -x -o build -e foot-extra,foot-extra-direct -
+@@ -62,11 +63,3 @@
+ 	DESTDIR="$pkgdir" ninja -C build install
+ 	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+ }
+-
+-package_foot-terminfo() {
+-	pkgdesc="Extra non-standard terminfo files for $pkgbase, a Wayland terminal emulator"
+-	depends=(ncurses)
+-	cd "$pkgbase"
+-	install -Dm0644 -t "$pkgdir/usr/share/terminfo/f/" build/f/foot-extra*
+-	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+-}
+
