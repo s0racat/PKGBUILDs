@@ -1,0 +1,35 @@
+--- PKGBUILD.org	2023-06-05 21:35:23.772023351 +0900
++++ PKGBUILD	2023-06-05 21:50:02.609425817 +0900
+@@ -3,16 +3,15 @@
+ 
+ _pkgname=ananicy-cpp
+ pkgname=ananicy-cpp-git
+-pkgver=1.0.1.r12.gcafb692
++pkgver=1.0.2.r40.gb58a7e6
+ pkgrel=1
+ pkgdesc="Ananicy Cpp is a full rewrite of Ananicy in C++, featuring lower CPU and RAM usage."
+ arch=(x86_64 i386 armv7h)
+ url="https://gitlab.com/ananicy-cpp/ananicy-cpp.git"
+ license=('GPLv3')
+-depends=(fmt spdlog nlohmann-json systemd libelf zlib libbpf)
+-makedepends=(cmake ninja clang git nlohmann-json bpf)
+-optdepends=("ananicy-rules-git: community rules"
+-            "ananicy-rules: Rules based for ananicy-cpp")
++depends=(libfmt.so=9 libspdlog.so=1.11)
++makedepends=(cmake ninja git nlohmann-json)
++optdepends=("ananicy-rules-git: community rules")
+ source=("${_pkgname}::git+https://gitlab.com/ananicy-cpp/ananicy-cpp.git"
+         "git+https://gitlab.com/vnepogodin/std-format.git")
+ sha512sums=('SKIP'
+@@ -49,9 +48,8 @@
+         -DCMAKE_INSTALL_PREFIX=/usr \
+         -DUSE_EXTERNAL_SPDLOG=ON \
+         -DUSE_EXTERNAL_JSON=ON \
+-        -DUSE_BPF_PROC_IMPL=ON \
+-        -DBPF_BUILD_LIBBPF=OFF \
+-        -DUSE_EXTERNAL_FMTLIB=ON
++        -DUSE_EXTERNAL_FMTLIB=ON \
++        -DENABLE_SYSTEMD=OFF
+ 
+   cmake --build build --target ananicy-cpp --parallel $_cpuCount
+ }
