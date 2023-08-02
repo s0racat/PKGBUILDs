@@ -9,7 +9,7 @@
  license=('GPLv3')
 -depends=(fmt spdlog nlohmann-json systemd libelf zlib libbpf)
 -makedepends=(cmake ninja clang git nlohmann-json bpf)
-+depends=(libfmt.so=9 libspdlog.so=1.11)
++depends=(libfmt.so=10 libspdlog.so=1.11)
 +makedepends=(cmake git nlohmann-json ninja)
  optdepends=("ananicy-rules-git: community rules"
 -            "ananicy-rules: Rules based for ananicy-cpp")
