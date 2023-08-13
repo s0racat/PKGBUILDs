@@ -11,7 +11,7 @@ options=('!strip')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/Adapta-Projects/Papirus-Nord/archive/refs/tags/$pkgver.tar.gz"
         "0001-Use-env-command-to-pass-variable.patch")
 sha256sums=('ffdb977c22630b5151e1f4956416ccd11a29394828509f36dab99ff7e243d119'
-            '1bae53cb4c9cb77a1aea100f3fc6ee8caf45ba91a14c4cb87162e8557b6737cb')
+            'ed9dfff91cbab993234310ade57144de1fa8a1fbf7fa58a50c5f6a02b0cc620c')
 
 prepare() {
     cd Papirus-Nord-$pkgver
