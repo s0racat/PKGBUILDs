@@ -1,0 +1,13 @@
+# Thanks for @Npepperlinux@github.com
+# ref: https://github.com/Npepperlinux/miria/blob/b371120665086b833439992b8c88e1c875cc56ef/debian/gui/miria.desktop
+[Desktop Entry]
+Version=1.0
+Name=Miria
+GenericName=Miria
+Exec=/opt/miria/miria
+Icon=/usr/share/icons/miria.png
+Comment=Misskey client built with Flutter
+Terminal=false
+Type=Application
+Categories=Utility
+Keywords=Miria;Misskey;

@@ -1,0 +1,37 @@
+pkgname=miria
+pkgver=1.0.2
+_pkgrel=56
+pkgrel=1
+pkgdesc='Misskey client application for iOS, Android (and other platforms)'
+arch=('x86_64')
+url="https://github.com/shiosyakeyakini-info/miria"
+depends=('gtk3' 'zenity')
+makedepends=('flutter' 'clang' 'cmake' 'ninja' 'pkgconf' 'xz')
+source=("https://github.com/shiosyakeyakini-info/$pkgname/archive/refs/tags/v$pkgver+$_pkgrel.tar.gz"
+	miria.desktop)
+
+prepare(){
+    cd $pkgname-$pkgver-$_pkgrel
+    flutter --no-version-check config --no-analytics
+    flutter --no-version-check config --enable-linux-desktop
+    flutter --no-version-check pub get
+}
+
+build() {
+    cd $pkgname-$pkgver-$_pkgrel
+    flutter --no-version-check build linux --release
+}
+
+package() {
+    cd "$pkgname-$pkgver-$_pkgrel/build/linux/x64/release/bundle/"
+    # create the target folders
+    install -dm 755 "$pkgdir/opt/$pkgname" "$pkgdir/usr/bin/"
+    # copy the bundled output to /opt
+    cp -rdp --no-preserve=ownership . "$pkgdir/opt/$pkgname/"
+    # symlink to /usr/bin so the app can be found in PATH
+    ln -s "/opt/$pkgname/$pkgname" "$pkgdir/usr/bin/$pkgname"
+    install -Dm644 $srcdir/miria.desktop $pkgdir/usr/share/applications/miria.desktop
+    install -Dm644 $srcdir/$pkgname-$pkgver-$_pkgrel/assets/images/icon.png $pkgdir/usr/share/icons/miria.png
+}
+sha256sums=('b19888af92e3890ef5e5e23151f7dde6b354bf974f6e77ed2cbe7cd323b753ed'
+            'b1946233c00e432c5a9e658e419ba84e69f490bddcb149c1c8a94739f6881612')

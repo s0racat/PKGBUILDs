@@ -5,13 +5,13 @@ pkgdesc="Custom colors for folder icons for Papirus Icon Theme!"
 arch=('any')
 url="https://www.pling.com/p/1360398"
 license=('GPL2')
-depends=('papirus-icon-theme')
+depends=('papirus-icon-theme' 'opendoas')
 conflicts=('papirus-linux-universe' 'papirus-folders')
 options=('!strip')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/Adapta-Projects/Papirus-Nord/archive/refs/tags/$pkgver.tar.gz"
         "0001-Use-env-command-to-pass-variable.patch")
 sha256sums=('ffdb977c22630b5151e1f4956416ccd11a29394828509f36dab99ff7e243d119'
-            'ed9dfff91cbab993234310ade57144de1fa8a1fbf7fa58a50c5f6a02b0cc620c')
+            'fb63b390b194f60644caf5c097af1c8930a4e98eadebe37cff4ead73f0b3a5c5')
 
 prepare() {
     cd Papirus-Nord-$pkgver
