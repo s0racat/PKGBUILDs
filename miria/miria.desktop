@@ -3,7 +3,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Miria
-GenericName=Misskey Client
+GenericName=Micro-blogging client
 Exec=/opt/miria/miria
 Icon=/usr/share/icons/miria.png
 Comment=Misskey client built with Flutter
