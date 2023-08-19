@@ -34,4 +34,4 @@ package() {
     install -Dm644 $srcdir/$pkgname-$pkgver-$_pkgrel/assets/images/icon.png $pkgdir/usr/share/icons/miria.png
 }
 sha256sums=('b19888af92e3890ef5e5e23151f7dde6b354bf974f6e77ed2cbe7cd323b753ed'
-            'b1946233c00e432c5a9e658e419ba84e69f490bddcb149c1c8a94739f6881612')
+            '4cb9d1e317d643167b3bb84ae0a5c739097e0fcc0cb6d82ba1689ccf6a3a98c3')
