@@ -1,5 +1,12 @@
 # PKGBUILDs
 
+## if you are using doas
+
+```bash
+makepkg -src
+doas pacman -U *.zst
+```
+
 ## ananicy-cpp dependencies
 
 `ldd /usr/bin/ananicy-cpp`
