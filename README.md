@@ -1,7 +1,7 @@
 # PKGBUILDs
 
 ```bash
-sudo docker run -it --rm -v "$PWD":/mnt archlinux:latest /bin/bash -c "pacman -Sy --needed --noconfirm base-devel pacman-contrib && cd /mnt && exec /bin/bash"
+sudo docker run -it --rm -v "$PWD":/mnt archlinux:latest /bin/bash -c "pacman -Sy --needed --noconfirm base-devel pacman-contrib vim && cd /mnt && exec /bin/bash"
 ```
 
 ## if you are using doas
